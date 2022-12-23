@@ -2,13 +2,12 @@
   <div class="container">
     <Header title="To do List" />
     <div>
-      <AddTask @add-task="addTask" />
+      <AddTask @add-task="addTask" /> <!-- calling method add task -->
     </div>
     <Tasks
-      @toggle-completed="toggleCompleted"
+      @toggle-completed="toggleCompleted" 
       @delete-task="deleteTask"
-      :tasks="tasks"
-    />
+      :tasks="tasks"/> <!-- calling methods -->
   </div>
 </template>
 
@@ -30,11 +29,11 @@ export default {
     };
   },
   methods: {
-    addTask(task) {
+    addTask(task) { /* this.tasks is equal to an array with new task plus this.tasks */
       this.tasks = [task, ...this.tasks];
     },
 
-    deleteTask(id) {
+    deleteTask(id) { /* loop through for each task and return everything with diferent id */
       this.tasks = this.tasks.filter((task) => task.id !== id);
     },
 
@@ -82,7 +81,7 @@ html,
   background: linear-gradient(to right, #00aaff, #00ff6c);
 }
 
-// app Ui 
+// app container Ui 
 .container {
   max-width: 500px;
   margin: 30px auto;

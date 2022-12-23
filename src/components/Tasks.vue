@@ -4,8 +4,7 @@
         <Task
       @toggle-completed="$emit('toggle-completed', task.id)"
       @delete-task="$emit('delete-task', task.id)"
-      :task="task"
-    />
+      :task="task" /> <!-- emit for toggle and delete data from app component -->
     </div>
 </template>
 <script>

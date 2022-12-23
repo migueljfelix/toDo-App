@@ -2,8 +2,7 @@
   <!-- new task form -->
   <form  @submit="onSubmit" class="add-form">
     <div class="form-control">
-      <input type="text" v-model="text" name="text" placeholder="Add Task"
-      />
+      <input type="text" v-model="text" name="text" placeholder="Add Task"/> <!-- v-model to default \ 2 way binding -->
     </div>
     <input type="submit" value="Save Task" class="btn btn-block" />
   </form>
@@ -15,9 +14,8 @@ export default {
   name: "AddTask",
   data() {
     return { 
-        text: "", 
-        createdAt: new Date(),
-        completed: false,
+        text: "",
+        //return default
 };
   },
   methods: {
@@ -30,7 +28,7 @@ export default {
         
       }
 
-      const newTask = {
+      const newTask = { //new task object
         id: Math.floor(Math.random() * 10000),
         description: this.text,
         createdAt: new Date(),
@@ -38,11 +36,9 @@ export default {
       };
       console.log(newTask);
       
-      this.$emit("add-task", newTask);
+      this.$emit("add-task", newTask); // emit data up
 
-      this.description = "",
-      this.createdAt= new Date(),
-      this.completed = false;
+      this.text = "" // form goes back to blank
     },
   },
 };
