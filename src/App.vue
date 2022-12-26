@@ -39,7 +39,7 @@ export default {
 
     toggleCompleted(id) {
       //updating a task by seting a reminder to false or true| return array of updated tasks
-      // if for each task - fech if task.id is equal to the id passed in. if it is, return array of object where we have the enitial taskproprety and change the reminder to wathever the oposite the current task reminder, else if it doesnt match the id, do nothing.
+      // if for each task - fech if task.id is equal to the id passed in. if it is, return array of object where we have the enitial taskproprety and change the completed to wathever the oposite the current task completed, else if it doesnt match the id, do nothing.
       this.tasks = this.tasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
       );
